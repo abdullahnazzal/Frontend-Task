@@ -81,10 +81,12 @@
       </ng-container>
       <ng-container *ngIf="!books">
         <div class="container-loading">
-          <span class="card">
-            <span class="img">No Book Available</span>
-            <span class="txt">Please Search For A Book</span>
-          </span>
+          <div class="card is-loading">
+            <div class="image">No Book Available</div>
+            <div class="content">
+              <p>Please Search For A Book</p>
+            </div>
+          </div>
         </div>
       </ng-container>
     </div>

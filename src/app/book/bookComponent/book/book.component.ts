@@ -33,15 +33,11 @@ export class BookComponent implements OnInit {
   }
 
   handleClearSeacrchInput(){
-    console.log(this.books);
-
     this.searchForm.reset();
   }
 
   handleSearchForm(): void {
     let val = this.searchForm.value.searchBar;
-    console.log("val: " + typeof(val));
-
     if (val) {
       const dialogRef = this.dialog.open(DialogLoadingComponent);
       dialogRef.afterOpened().subscribe(()=>{
@@ -56,6 +52,8 @@ export class BookComponent implements OnInit {
         this.bookService.setBook(this.books);
       });
     }
+    // this.searchForm.reset();
+
   }
   onClick(val:string): any {
     if (val === 'a-z' ) {
