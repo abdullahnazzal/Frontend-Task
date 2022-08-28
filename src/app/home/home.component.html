@@ -15,7 +15,10 @@
       </ul>
     </nav>
   </header>
-  <video src="../../assets/bg-vid.mp4" muted loop autoplay></video>
+  <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+    <source src="../../assets/bg-vid.mp4" type="video/mp4">
+</video>
+  <!-- <video src="../../assets/bg-vid.mp4" muted loop autoplay></video> -->
   <div class="overlay"></div>
   <div class="text">
     <h2>Never Stop</h2>
@@ -38,7 +41,6 @@
           style="width: 41px; height: 41px"
       /></a>
     </li>
-    <!-- <li><a href="https://github.com/luxurybookstore"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a></li> -->
     <li class="copy">Copyright &copy; 2022 by Abdullah Nazzal.</li>
   </ul>
 </section>
