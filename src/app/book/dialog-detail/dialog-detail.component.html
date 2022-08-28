@@ -1,0 +1,25 @@
+<mat-dialog-content class="dialog">
+  <div class="container">
+    <div class="detail">
+      <img src={{data.volumeInfo.imageLinks.thumbnail}} alt="Thumbnail">
+      <div class="detail-item">
+        <h3>Name : {{data.volumeInfo.title}}</h3>
+        <h3>Authors : {{data.volumeInfo.authors}}</h3>
+        <h3>PublishedDate : {{data.volumeInfo.publishedDate}}</h3>
+      </div>
+    </div>
+
+    <div class="description">
+      <p [ngClass]="{'limitTextHeight': isReadMore}">
+        {{data.volumeInfo.description ? data.volumeInfo.description: 'No Description Available'}}
+
+      </p>
+      <button mat-raised-button type="button" (click)="showText()">
+        {{data.volumeInfo.description ?  isReadMore ? 'Read More': 'Read Less': ''}}
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

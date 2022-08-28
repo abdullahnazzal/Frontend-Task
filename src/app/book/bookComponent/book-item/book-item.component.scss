@@ -1,0 +1,40 @@
+.card {
+  max-width: 250px;
+  min-width: 250px;
+  min-height: 320px;
+  max-height: 320px;
+  margin: 20px;
+  transition: transform .2s;
+  .card-img{
+    height: 250px;
+  }
+  .card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.8rem;
+    height: 50px;
+    margin-top: .5rem;
+
+  }
+  .card-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 35px;
+    margin-top: .5rem;
+  }
+
+  &:hover{
+    border: 3px solid #3a7999;
+    color: #3a7999;
+    background: rgba(0,0,0,0);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
