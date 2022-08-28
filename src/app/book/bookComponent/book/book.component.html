@@ -1,0 +1,102 @@
+<div>
+  <mat-toolbar class="header">
+    <a href=""></a>
+    <img
+      class="logo"
+      src="../../../assets/luxury-black-2.png"
+      alt="Luxury Book Store"
+    />
+    <div class="form-serach">
+      <form [formGroup]="searchForm" (ngSubmit)="handleSearchForm()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Search For Book</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Ex. Angular"
+            formControlName="searchBar"
+            [matAutocomplete]="auto"
+            class="search-box"
+          />
+          <mat-autocomplete #auto="matAutocomplete" >
+              <mat-option *ngFor="let option of options" [value]="option">
+                <span>{{ option }}</span>
+              </mat-option>
+          </mat-autocomplete>
+          <button *ngIf="searchForm.value.searchBar" matSuffix mat-icon-button (click)="handleClearSeacrchInput()">
+            <mat-icon>close</mat-icon>
+          </button>
+          <button matSuffix mat-icon-button class="search-button">
+            <mat-icon>search</mat-icon>
+          </button>
+
+        </mat-form-field>
+      </form>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/">Home</a>
+        </li>
+
+      </ul>
+    </nav>
+  </mat-toolbar>
+
+  <!-- ----------- END HEADER ----------- -->
+
+  <div class="container" >
+    <div class="inside">
+      <ng-container *ngIf="books">
+        <div class="container-sort" >
+
+        <mat-button-toggle-group #group="matButtonToggleGroup">
+          <mat-button-toggle
+            value="a-z"
+            (click)="onClick(group.value)"
+            matTooltip="Sort By Title A-Z"
+            matTooltipClass="example-tooltip-red"
+          >
+          <mat-icon>sort_by_alpha</mat-icon>
+
+          </mat-button-toggle>
+          <mat-button-toggle
+            value="z-a"
+            (click)="onClick(group.value)"
+            matTooltip="Sort By Title Z-A"
+            matTooltipClass="example-tooltip-red"
+          >
+          <mat-icon>sort_by_alpha</mat-icon>
+
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </ng-container>
+
+      <ng-container *ngIf="books">
+        <div class="container-book">
+          <app-book-item *ngFor="let book of books" [book]="book">
+          </app-book-item>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="!books">
+        <div class="container-loading">
+          <span class="card">
+            <span class="img">No Book Available</span>
+            <span class="txt">Please Search For A Book</span>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+    <!-- [matAutocomplete]="auto"
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+            <ng-container *ngIf="!isLoading">
+              <mat-option *ngFor="let option of searchResult$" [value]="option.name">
+                <span>{{ option.title }}</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>  -->

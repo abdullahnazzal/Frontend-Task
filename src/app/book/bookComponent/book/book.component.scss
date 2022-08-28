@@ -1,0 +1,231 @@
+
+/* -----------START HEADER----------------- */
+
+mat-toolbar.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  background-color: white;
+  padding: 5px;
+
+  img.logo {
+    color: #fff;
+    height: 100%;
+    margin-left: 40px;
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+  }
+
+  .form-serach {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 10px;
+    margin-right: 20px;
+    // max-width: 400px;
+    ::ng-deep form {
+      // .mat-input-element {
+      // height: 20px;
+      // margin-top: 50px;
+      // margin-top: 20px;
+      // }
+    }
+    ::ng-deep .mat-form-field {
+      .mat-input-element {
+        max-height: 20px;
+        // padding: 0;
+        // margin: 0;
+      }
+      .mat-form-field-label {
+        max-height: 20px;
+        // padding: 0;
+        // margin: 0;
+      }
+      .mat-form-field-infix {
+        width: 100%;
+        padding: 0;
+        border-top: 0;
+      }
+
+      .mat-form-field-flex {
+        padding: 0;
+        padding-left: 5px;
+        margin-top: 27px;
+        align-items: center;
+
+      }
+    }
+    ::ng-deep .mat-form-field.mat-focused {
+      .mat-form-field-label {
+        padding: 0;
+        margin: 0;
+        display: none;
+      }
+    }
+    @media screen and (max-width: 750px) {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .searchForm {
+      mat-form-field {
+        height: 50%;
+      }
+    }
+
+    .search-icons {
+      height: 40px;
+      width: 66px;
+      /* display: flex; */
+      /* align-items: center;
+        justify-content: ; */
+      background-color: rgb(240, 240, 240);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(192, 192, 192);
+      margin-left: -1px;
+      // position: relative;
+    }
+    .search-icons .tooltip {
+      background-color: rgb(197, 183, 183);
+      color: white;
+      border-radius: 3px;
+      font-size: 12px;
+      font-family: roboto, Arial;
+      position: absolute;
+      top: 47px;
+      padding: 5px;
+      opacity: 0;
+      transition: opacity 0.75s;
+      pointer-events: none;
+    }
+    .search-icons:hover .tooltip {
+      opacity: 1;
+    }
+
+    .search-icons-img {
+      height: 20px;
+      margin-top: 3px;
+    }
+  }
+  nav {
+    width: 200px;
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      &:hover {
+        color: #d3b55a;
+      }
+    }
+
+  }
+}
+/* -----------END HEADER----------------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .inside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    .container-sort {
+      display: flex;
+      width: 100%;
+      // height: 100px;
+      justify-content: flex-end;
+      align-items: center;
+      // flex-direction: column;
+      background-color: white;
+
+      margin-top: 100px;
+
+      .example-button {
+        padding: 16px;
+      }
+
+      .example-tooltip-red {
+        color: #b71c1c;
+      }
+
+      .sort-button {
+        width: 40px;
+        border: none;
+        border-radius: 50%;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.container-book {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+
+  margin-top: 10px;
+
+
+}
+
+.container-loading{
+  width: 100%;
+  height: 320px;
+  background-color: white;
+
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span.card{
+    border: 1px solid #3a7999;
+    max-width: 250px;
+    min-width: 250px;
+    min-height: 320px;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    .img{
+      width: 100%;
+      height: 250px;
+      background-color: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .txt{
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
